@@ -1,9 +1,15 @@
-import Image from "next/image";
+import React from "react";
+import TicketCard from "./(components)/TicketCard";
 
-export default function Home() {
+const Dashboard = () => {
   return (
-    <> <h1>This is home</h1> 
-    <h2 className="text-9xl" >FRN</h2>
-    </>
+    <div className="lg:grid lg:grid-cols-2 xl:grid-cols-4">
+      <TicketCard />
+      <TicketCard />
+      <TicketCard />
+      <TicketCard />
+    </div>
   );
-}
+};
+
+export default Dashboard;
