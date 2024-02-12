@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 const TicketForm = () => {
   const router = useRouter();
+  // these are default value
   const startingTicketData = {
     title: "",
     description: "",
@@ -23,7 +24,7 @@ const TicketForm = () => {
       [name]: value,
     }));
   };
-
+// main function to send data to database
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await fetch("/api/Tickets", {
