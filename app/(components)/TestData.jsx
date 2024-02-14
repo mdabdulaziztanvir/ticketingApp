@@ -7,6 +7,7 @@ const TestData = () => {
 
   const startingTestData = {
     title: "",
+    description: "",
   };
   // default value need to  assign here
   const [testData, setTestdata] = useState(startingTestData);
@@ -20,7 +21,7 @@ const TestData = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("api/TestDatas", {
+    const res = await fetch("/api/TestDatas", {
       method: "POST",
       body: JSON.stringify({
         testData,
@@ -31,7 +32,7 @@ const TestData = () => {
       throw new Error("faild to send data to database");
     }
     router.refresh();
-    router.push("/");
+    router.push("/testdatas");
   };
   return (
     <div className="text-nav flex ">
@@ -47,6 +48,23 @@ const TestData = () => {
           id="title"
           onChange={handleChange}
           value={testData.title}
+          required={true}
+        />
+        <input
+          type="text"
+          name="title2"
+          id="title2"
+          onChange={handleChange}
+          value={testData.title2}
+          required={true}
+        />
+        <label>Add some description</label>
+        <input
+          type="text"
+          id="description"
+          name="description"
+          onChange={handleChange}
+          value={testData.description}
           required={true}
         />
         <input type="submit" className="btn mt-2" />

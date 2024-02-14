@@ -18,8 +18,8 @@ export async function POST(req) {
 
 export async function GET() {
   try {
-    const testdata = await TestData.find();
-    return NextResponse.json({ testdata }, { status: 200 });
+    const testDatas = await TestData.find();
+    return NextResponse.json({ testDatas }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ message: "Error", error }, { status: 500 });
   }

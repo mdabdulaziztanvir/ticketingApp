@@ -18,5 +18,6 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 database table name will be according to models file name.
 
-- models name should be all lowercase
+- models name should be all lowercase + plural => karon ei name ei database table name create hoy and data fetch korte ei name use korte hoi.
 - api folder name should be 1st letter uppercase
+- database name will be the model name. 
