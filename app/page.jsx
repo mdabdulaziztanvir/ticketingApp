@@ -13,9 +13,22 @@ const getTickets = async () => {
   }
 };
 
+const getTestData = async () => {
+  try {
+    const res = await fetch("http://localhost:3000/api/TestDatas", {
+      cache: "no-cache",
+    });
+    return res.json();
+  } catch (error) {
+    console.error("test data failed to fetch", error);
+    throw error;
+  }
+};
+
 const Dashboard = async () => {
   const { tickets } = await getTickets();
   //  by category need to shown them
+  const { dataOfTests } = await getTestData();
 
   const uniqueCategories = [
     ...new Set(tickets?.map(({ category }) => category)),
@@ -41,6 +54,12 @@ const Dashboard = async () => {
             </div>
           ))}
       </div>
+      {/* added my titles */}
+      {/* <div>
+        {dataOfTests.map((dataOfTest, index) => {
+          <h2 key={index}>{dataOfTest.title}</h2> }
+        )}
+      </div> */}
     </div>
   );
 };

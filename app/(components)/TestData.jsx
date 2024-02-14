@@ -4,8 +4,12 @@ import { useRouter } from "next/navigation";
 
 const TestData = () => {
   const router = useRouter();
+
+  const startingTestData = {
+    title: "",
+  };
   // default value need to  assign here
-  const [testData, setTestdata] = useState("");
+  const [testData, setTestdata] = useState(startingTestData);
   const handleChange = (e) => {
     const value = e.target.value;
     const name = e.target.name;

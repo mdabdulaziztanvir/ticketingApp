@@ -1,8 +1,8 @@
 import mongoose, { Schema } from "mongoose";
-
+// connect to data base
 mongoose.connect(process.env.MONGODB_URI);
-
-mongoose.promise = global.promise;
+// new promise to do something
+mongoose.Promise = global.Promise;
 
 const testDataSchema = new Schema(
   {
