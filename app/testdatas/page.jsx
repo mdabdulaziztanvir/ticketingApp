@@ -12,9 +12,9 @@ const TestDatas = () => {
         });
         // const testData = await res.json();
         // setDataOfTests(testData.testdata);
-        const {testdata} = await res.json(); //eta database er name er moto hote hobe or 
-        console.log(testdata);
-        setDataOfTests(testdata);
+        const { testDatas } = await res.json(); //eta database er name er moto hote hobe or
+        console.log(testDatas);
+        setDataOfTests(testDatas);
       } catch (error) {
         console.error("Test data failed to fetch", error);
       }

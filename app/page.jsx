@@ -16,7 +16,6 @@ const getTickets = async () => {
 const Dashboard = async () => {
   const { tickets } = await getTickets();
   //  by category need to shown them
-  console.log(tickets);
   const uniqueCategories = [
     ...new Set(tickets?.map(({ category }) => category)),
   ];

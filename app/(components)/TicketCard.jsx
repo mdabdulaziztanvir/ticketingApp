@@ -9,7 +9,7 @@ const TicketCard = ({ ticket }) => {
     <div className="p-5 bg-card hover:bg-card-hover rounded-md shadow-lg m-2">
       <div className="flex justify-between ">
         <PriorityDisplay priority={ticket.priority} />
-        <DeleteBlock />
+        <DeleteBlock id={ticket._id} />
       </div>
       <h3 className="overflow-hidden overflow-ellipsis">{ticket.title}</h3>
       <hr className="h-px border-0 bg-nav mb-2" />
@@ -18,11 +18,11 @@ const TicketCard = ({ ticket }) => {
       </p>
       <div className="flex mt-2">
         <div className="flex  flex-col ">
-          <p className="text-xs my-1">08/31/23 10:43PM</p>
-          <ProgressBar  />
+          <p className="text-xs my-1">{ticket.createdAt}</p>
+          <ProgressBar progress = {ticket.progress} />
         </div>
         <div className="flex items-end ml-auto ">
-          <StatusDisplay />
+          <StatusDisplay status={ticket.status} />
         </div>
       </div>
     </div>
